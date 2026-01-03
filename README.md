@@ -8,7 +8,7 @@ A capstone1 project for the Machine Learning Zoomcamp 2025
 - `test.py`: Script to verify the running Docker/Lambda service.
 - `Dockerfile`: Instructions for building the containerized environment.
 
-✅ Why This Project Matters
+## ✅ Why This Project Matters
 Identifying gemstones manually requires years of training and specialized equipment like refractometers. This project demonstrates how Computer Vision can:
 - **Democratize Expertise**: Allow non-experts to get an initial identification of a stone using just a smartphone camera.
 - **Scale Identification**: Process thousands of images for inventory management in jewelry e-commerce.
