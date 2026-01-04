@@ -8,7 +8,7 @@ ENV MODEL_NAME=${MODEL_NAME}
 ARG MODEL_DATA=gemstone_classifier_resnet101.onnx.data
 
 COPY ${MODEL_NAME} ${MODEL_NAME}
-COPY ${MODEL_DATA} ${MODEL_DATA}
+COPY ${MODEL_DATA}* ${MODEL_DATA}
 
 COPY lambda_function.py ./
 

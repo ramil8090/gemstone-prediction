@@ -29,12 +29,14 @@ During the model selection phase, three major architectures were evaluated to fi
 - Python 3.x  
 - Google Colab account (recommended for GPU training)
 - Docker (for deployment)
+- Install uv - an extremely fast Python package and project manager, written in Rust. (`pip install uv`)
+- Install project dependencies via uv (`uv sync --locked`)  
 
 ### Train model:
-- Open notebooks/notebook.ipynb in Google Colab
+- Open `train.ipynb` in Google Colab
 - Switch to a T4 GPU processor
 - Run all cells
-- Download the trained ONNX model along with onnx.data file to the ROOT of the current repository
+- Download the trained ONNX model and the onnx.data file to the root of the current repository.
 
 ### Running Prediction Lambda using Docker
 The application is containerized to run as an AWS Lambda function using the Lambda Runtime Interface Client (RIC).
@@ -50,7 +52,15 @@ docker run -it --rm -p 8080:8080 gemstone-prediction:latest
 ### Running Tests
 With the Docker container running, execute the test script to send a sample image URL to the endpoint:
 ```bash
-python test.py
+uv run python test.py
+```
+
+## 🙅 Alternative method to train model using train.py:
+**Note**: Training the model using train.py takes several hours. Therefore, this option is not recommended unless you have a GPU.
+
+### Train model:
+```bash
+uv run python train.py
 ```
 
 ## 📚 Acknowledgements & References
